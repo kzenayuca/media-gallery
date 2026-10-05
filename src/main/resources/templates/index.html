@@ -105,5 +105,25 @@
             </div>
         </div>
     </div>
+
+        <div class="container">
+        <h1>🌺 Galería de Flores</h1>
+        
+        <div class="gallery">
+            <div th:each="flower : ${flowers}" class="flower-card">
+                <div th:if="${flower.imageUrl}" class="flower-image" 
+                     th:style="'background-image: url(' + ${flower.imageUrl} + '); background-size: cover; background-position: center;'">
+                </div>
+                <div th:unless="${flower.imageUrl}" class="no-image">
+                    🌸 Flor sin imagen
+                </div>
+                <div class="flower-info">
+                    <div class="flower-name" th:text="${flower.name}">Nombre</div>
+                    <div class="flower-description" th:text="${flower.description}">Descripción</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
